@@ -1,0 +1,2363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AYUSH CARE | Smart Case Taking</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="stylee.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     ANIMATED BACKGROUND
+===================================================== -->
+
+<div class="background-animation">
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+</div>
+
+
+<!-- =====================================================
+     LOGIN PAGE
+===================================================== -->
+
+<section id="loginPage" class="login-page">
+
+    <div class="login-card">
+
+        <div class="logo-container">
+
+            <div class="logo">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <h1>AYUSH <span>CARE</span></h1>
+
+            <p>
+                Smart Patient Case-Taking System
+            </p>
+
+        </div>
+
+
+        <form id="loginForm">
+
+            <div class="input-group">
+
+                <label>
+                    <i class="fa-solid fa-envelope"></i>
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="doctor@example.com"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    <i class="fa-solid fa-lock"></i>
+                    Password
+                </label>
+
+                <div class="password-box">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        id="showPassword"
+                    >
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="login-options">
+
+                <label>
+                    <input type="checkbox">
+                    Remember me
+                </label>
+
+                <a href="#">
+                    Forgot Password?
+                </a>
+
+            </div>
+
+
+            <button class="login-button">
+
+                Sign In
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </form>
+
+
+        <div class="login-footer">
+
+            <p>
+                SIH26047
+            </p>
+
+            <span>
+                Ministry of Ayush
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MAIN APPLICATION
+===================================================== -->
+
+<section id="appPage" class="app-page hidden">
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div>
+
+                <h2>AYUSH CARE</h2>
+
+                <small>
+                    Smart Case Taking
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+            <button
+                class="nav-item active"
+                data-page="dashboard"
+            >
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="patients"
+            >
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>
+                    Patients
+                </span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="newCase"
+            >
+
+                <i class="fa-solid fa-file-medical"></i>
+
+                <span>
+                    New Case
+                </span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="assessment"
+            >
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+                <span>
+                    Assessment
+                </span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="history"
+            >
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <span>
+                    Patient History
+                </span>
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="reports"
+            >
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <span>
+                    Reports
+                </span>
+
+            </button>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+
+        <div class="sidebar-bottom">
+
+            <button id="logoutButton">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================= -->
+
+    <main class="main-content">
+
+
+        <!-- =============================================
+             TOP HEADER
+        ============================================= -->
+
+        <header class="top-header">
+
+            <button id="mobileMenu"
+                    class="mobile-menu">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    placeholder="Search patients..."
+                >
+
+            </div>
+
+
+            <div class="header-right">
+
+                <button class="notification">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span></span>
+
+                </button>
+
+
+                <div class="doctor-profile">
+
+                    <div class="doctor-avatar">
+                        DR
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Dr. Kumar
+                        </strong>
+
+                        <small>
+                            AYUSH Practitioner
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             DASHBOARD
+        ================================================= -->
+
+        <section id="dashboard" class="page active-page">
+
+            <div class="page-heading">
+
+                <div>
+
+                    <p class="welcome">
+                        Good evening 👋
+                    </p>
+
+                    <h1>
+                        Doctor Dashboard
+                    </h1>
+
+                    <p>
+                        Manage your AYUSH patient cases efficiently.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    onclick="showPage('newCase')"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    New Patient Case
+
+                </button>
+
+            </div>
+
+
+
+            <!-- Statistics -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div>
+
+                        <p>Total Patients</p>
+
+                        <h2>
+                            1,248
+                        </h2>
+
+                        <span class="positive">
+                            ↑ 12% this month
+                        </span>
+
+                    </div>
+
+                    <div class="stat-icon green">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div>
+
+                        <p>Today's Cases</p>
+
+                        <h2>
+                            24
+                        </h2>
+
+                        <span>
+                            8 awaiting review
+                        </span>
+
+                    </div>
+
+                    <div class="stat-icon blue">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div>
+
+                        <p>Pending Cases</p>
+
+                        <h2>
+                            08
+                        </h2>
+
+                        <span>
+                            Requires attention
+                        </span>
+
+                    </div>
+
+                    <div class="stat-icon orange">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div>
+
+                        <p>Reports</p>
+
+                        <h2>
+                            342
+                        </h2>
+
+                        <span class="positive">
+                            ↑ 8% this month
+                        </span>
+
+                    </div>
+
+                    <div class="stat-icon purple">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Dashboard Grid -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- Recent Patients -->
+
+                <div class="card recent-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h2>
+                                Recent Patients
+                            </h2>
+
+                            <p>
+                                Latest case-taking records
+                            </p>
+
+                        </div>
+
+                        <button
+                            onclick="showPage('patients')"
+                            class="text-button"
+                        >
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div class="patient-list">
+
+
+                        <div class="patient-row">
+
+                            <div class="patient-info">
+
+                                <div class="patient-avatar">
+                                    AK
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Arun Kumar
+                                    </strong>
+
+                                    <p>
+                                        P1024 • Headache
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <span>
+                                Today
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="patient-row">
+
+                            <div class="patient-info">
+
+                                <div class="patient-avatar">
+                                    PS
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Priya Sharma
+                                    </strong>
+
+                                    <p>
+                                        P1023 • Digestive Issues
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <span>
+                                Today
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="patient-row">
+
+                            <div class="patient-info">
+
+                                <div class="patient-avatar">
+                                    RR
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Rahul R
+                                    </strong>
+
+                                    <p>
+                                        P1022 • Joint Pain
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <span>
+                                Yesterday
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="patient-row">
+
+                            <div class="patient-info">
+
+                                <div class="patient-avatar">
+                                    AD
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Anitha Devi
+                                    </strong>
+
+                                    <p>
+                                        P1021 • Insomnia
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <span>
+                                Yesterday
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Progress -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h2>
+                                Case Progress
+                            </h2>
+
+                            <p>
+                                Today's workflow
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-list">
+
+
+                        <div class="progress-item">
+
+                            <div>
+
+                                <span>
+                                    Registration
+                                </span>
+
+                                <strong>
+                                    90%
+                                </strong>
+
+                            </div>
+
+                            <div class="progress-bar">
+
+                                <span style="width:90%"></span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="progress-item">
+
+                            <div>
+
+                                <span>
+                                    Case Taking
+                                </span>
+
+                                <strong>
+                                    72%
+                                </strong>
+
+                            </div>
+
+                            <div class="progress-bar">
+
+                                <span style="width:72%"></span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="progress-item">
+
+                            <div>
+
+                                <span>
+                                    Assessment
+                                </span>
+
+                                <strong>
+                                    56%
+                                </strong>
+
+                            </div>
+
+                            <div class="progress-bar">
+
+                                <span style="width:56%"></span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="progress-item">
+
+                            <div>
+
+                                <span>
+                                    Doctor Review
+                                </span>
+
+                                <strong>
+                                    35%
+                                </strong>
+
+                            </div>
+
+                            <div class="progress-bar">
+
+                                <span style="width:35%"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PATIENTS
+        ================================================= -->
+
+        <section id="patients" class="page">
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h1>
+                        Patients
+                    </h1>
+
+                    <p>
+                        Manage registered patient records.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-button"
+                    onclick="showPage('newCase')"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add Patient
+
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="table-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="patientSearch"
+                        placeholder="Search patient..."
+                    >
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table id="patientTable">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Patient ID
+                                </th>
+
+                                <th>
+                                    Name
+                                </th>
+
+                                <th>
+                                    Gender
+                                </th>
+
+                                <th>
+                                    Age
+                                </th>
+
+                                <th>
+                                    Complaint
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td class="patient-id">
+                                    P1024
+                                </td>
+
+                                <td>
+                                    Arun Kumar
+                                </td>
+
+                                <td>
+                                    Male
+                                </td>
+
+                                <td>
+                                    32
+                                </td>
+
+                                <td>
+                                    Headache
+                                </td>
+
+                                <td>
+                                    <span class="status completed">
+                                        Completed
+                                    </span>
+                                </td>
+
+                                <td>
+
+                                    <button class="icon-button">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="patient-id">
+                                    P1023
+                                </td>
+
+                                <td>
+                                    Priya Sharma
+                                </td>
+
+                                <td>
+                                    Female
+                                </td>
+
+                                <td>
+                                    28
+                                </td>
+
+                                <td>
+                                    Digestive Issues
+                                </td>
+
+                                <td>
+                                    <span class="status pending">
+                                        Pending
+                                    </span>
+                                </td>
+
+                                <td>
+
+                                    <button class="icon-button">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="patient-id">
+                                    P1022
+                                </td>
+
+                                <td>
+                                    Rahul R
+                                </td>
+
+                                <td>
+                                    Male
+                                </td>
+
+                                <td>
+                                    45
+                                </td>
+
+                                <td>
+                                    Joint Pain
+                                </td>
+
+                                <td>
+                                    <span class="status completed">
+                                        Completed
+                                    </span>
+                                </td>
+
+                                <td>
+
+                                    <button class="icon-button">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="patient-id">
+                                    P1021
+                                </td>
+
+                                <td>
+                                    Anitha Devi
+                                </td>
+
+                                <td>
+                                    Female
+                                </td>
+
+                                <td>
+                                    39
+                                </td>
+
+                                <td>
+                                    Insomnia
+                                </td>
+
+                                <td>
+                                    <span class="status pending">
+                                        Pending
+                                    </span>
+                                </td>
+
+                                <td>
+
+                                    <button class="icon-button">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             NEW CASE
+        ================================================= -->
+
+        <section id="newCase" class="page">
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h1>
+                        Smart Patient Case Taking
+                    </h1>
+
+                    <p>
+                        Complete the patient's clinical profile.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Step Indicator -->
+
+            <div class="steps">
+
+                <div class="step active" data-step="1">
+
+                    <div class="step-number">
+                        1
+                    </div>
+
+                    <span>
+                        Patient Details
+                    </span>
+
+                </div>
+
+
+                <div class="step-line"></div>
+
+
+                <div class="step" data-step="2">
+
+                    <div class="step-number">
+                        2
+                    </div>
+
+                    <span>
+                        Chief Complaint
+                    </span>
+
+                </div>
+
+
+                <div class="step-line"></div>
+
+
+                <div class="step" data-step="3">
+
+                    <div class="step-number">
+                        3
+                    </div>
+
+                    <span>
+                        Lifestyle
+                    </span>
+
+                </div>
+
+
+                <div class="step-line"></div>
+
+
+                <div class="step" data-step="4">
+
+                    <div class="step-number">
+                        4
+                    </div>
+
+                    <span>
+                        AYUSH Assessment
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Case Form -->
+
+            <form id="caseForm" class="case-form">
+
+
+                <!-- STEP 1 -->
+
+                <div class="case-step active" data-content="1">
+
+                    <div class="form-title">
+
+                        <div class="form-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Patient Information
+                            </h2>
+
+                            <p>
+                                Enter basic patient details.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-field">
+
+                            <label>
+                                Patient Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="patientName"
+                                placeholder="Enter full name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label>
+                                Age *
+                            </label>
+
+                            <input
+                                type="number"
+                                id="patientAge"
+                                placeholder="Age"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label>
+                                Gender *
+                            </label>
+
+                            <select id="patientGender" required>
+
+                                <option value="">
+                                    Select Gender
+                                </option>
+
+                                <option>
+                                    Male
+                                </option>
+
+                                <option>
+                                    Female
+                                </option>
+
+                                <option>
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label>
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                placeholder="+91 XXXXX XXXXX"
+                            >
+
+                        </div>
+
+
+                        <div class="form-field full">
+
+                            <label>
+                                Address
+                            </label>
+
+                            <textarea
+                                placeholder="Enter address"
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STEP 2 -->
+
+                <div class="case-step" data-content="2">
+
+                    <div class="form-title">
+
+                        <div class="form-icon">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Chief Complaint
+                            </h2>
+
+                            <p>
+                                Record the primary health concern.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-field full">
+
+                            <label>
+                                Main Complaint *
+                            </label>
+
+                            <input
+                                id="complaint"
+                                type="text"
+                                placeholder="Example: Headache, digestive problem..."
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label>
+                                Duration
+                            </label>
+
+                            <select>
+
+                                <option>
+                                    Select Duration
+                                </option>
+
+                                <option>
+                                    Less than 1 week
+                                </option>
+
+                                <option>
+                                    1–4 weeks
+                                </option>
+
+                                <option>
+                                    1–6 months
+                                </option>
+
+                                <option>
+                                    More than 6 months
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label>
+                                Severity
+                            </label>
+
+                            <select>
+
+                                <option>
+                                    Select Severity
+                                </option>
+
+                                <option>
+                                    Mild
+                                </option>
+
+                                <option>
+                                    Moderate
+                                </option>
+
+                                <option>
+                                    Severe
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label>
+                                Frequency
+                            </label>
+
+                            <select>
+
+                                <option>
+                                    Select Frequency
+                                </option>
+
+                                <option>
+                                    Occasional
+                                </option>
+
+                                <option>
+                                    Daily
+                                </option>
+
+                                <option>
+                                    Weekly
+                                </option>
+
+                                <option>
+                                    Constant
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label>
+                                Trigger
+                            </label>
+
+                            <input
+                                type="text"
+                                placeholder="Known triggers"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STEP 3 -->
+
+                <div class="case-step" data-content="3">
+
+                    <div class="form-title">
+
+                        <div class="form-icon">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Lifestyle & General Health
+                            </h2>
+
+                            <p>
+                                Record lifestyle-related information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-field">
+
+                            <label>
+                                Appetite
+                            </label>
+
+                            <select>
+
+                                <option>
+                                    Select
+                                </option>
+
+                                <option>
+                                    Normal
+                                </option>
+
+                                <option>
+                                    Low
+                                </option>
+
+                                <option>
+                                    High
+                                </option>
+
+                                <option>
+                                    Irregular
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label>
+                                Digestion
+                            </label>
+
+                            <select>
+
+                                <option>
+                                    Select
+                                </option>
+
+                                <option>
+                                    Normal
+                                </option>
+
+                                <option>
+                                    Poor
+                                </option>
+
+                                <option>
+                                    Very Poor
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label>
+                                Sleep
+                            </label>
+
+                            <select>
+
+                                <option>
+                                    Select
+                                </option>
+
+                                <option>
+                                    Good
+                                </option>
+
+                                <option>
+                                    Average
+                                </option>
+
+                                <option>
+                                    Poor
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label>
+                                Stress Level
+                            </label>
+
+                            <select>
+
+                                <option>
+                                    Select
+                                </option>
+
+                                <option>
+                                    Low
+                                </option>
+
+                                <option>
+                                    Moderate
+                                </option>
+
+                                <option>
+                                    High
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label>
+                                Physical Activity
+                            </label>
+
+                            <select>
+
+                                <option>
+                                    Select
+                                </option>
+
+                                <option>
+                                    Low
+                                </option>
+
+                                <option>
+                                    Moderate
+                                </option>
+
+                                <option>
+                                    High
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label>
+                                Water Intake
+                            </label>
+
+                            <select>
+
+                                <option>
+                                    Select
+                                </option>
+
+                                <option>
+                                    Less than 1 L
+                                </option>
+
+                                <option>
+                                    1–2 L
+                                </option>
+
+                                <option>
+                                    More than 2 L
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STEP 4 -->
+
+                <div class="case-step" data-content="4">
+
+                    <div class="form-title">
+
+                        <div class="form-icon">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                AYUSH Assessment
+                            </h2>
+
+                            <p>
+                                Record traditional assessment observations.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="assessment-grid">
+
+
+                        <div class="assessment-card">
+
+                            <i class="fa-solid fa-seedling"></i>
+
+                            <h3>
+                                Prakriti
+                            </h3>
+
+                            <select>
+
+                                <option>
+                                    Select
+                                </option>
+
+                                <option>
+                                    Vata
+                                </option>
+
+                                <option>
+                                    Pitta
+                                </option>
+
+                                <option>
+                                    Kapha
+                                </option>
+
+                                <option>
+                                    Vata-Pitta
+                                </option>
+
+                                <option>
+                                    Pitta-Kapha
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="assessment-card">
+
+                            <i class="fa-solid fa-arrows-rotate"></i>
+
+                            <h3>
+                                Vikriti
+                            </h3>
+
+                            <select>
+
+                                <option>
+                                    Select
+                                </option>
+
+                                <option>
+                                    Vata
+                                </option>
+
+                                <option>
+                                    Pitta
+                                </option>
+
+                                <option>
+                                    Kapha
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="assessment-card">
+
+                            <i class="fa-solid fa-circle-nodes"></i>
+
+                            <h3>
+                                Dosha Assessment
+                            </h3>
+
+                            <select>
+
+                                <option>
+                                    Select
+                                </option>
+
+                                <option>
+                                    Balanced
+                                </option>
+
+                                <option>
+                                    Vata Dominant
+                                </option>
+
+                                <option>
+                                    Pitta Dominant
+                                </option>
+
+                                <option>
+                                    Kapha Dominant
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="assessment-card">
+
+                            <i class="fa-solid fa-hand"></i>
+
+                            <h3>
+                                Nadi
+                            </h3>
+
+                            <select>
+
+                                <option>
+                                    Select
+                                </option>
+
+                                <option>
+                                    Normal
+                                </option>
+
+                                <option>
+                                    Vata
+                                </option>
+
+                                <option>
+                                    Pitta
+                                </option>
+
+                                <option>
+                                    Kapha
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="assessment-card">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                            <h3>
+                                Drik
+                            </h3>
+
+                            <select>
+
+                                <option>
+                                    Select
+                                </option>
+
+                                <option>
+                                    Normal
+                                </option>
+
+                                <option>
+                                    Observed
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="assessment-card">
+
+                            <i class="fa-solid fa-comment"></i>
+
+                            <h3>
+                                Shabda
+                            </h3>
+
+                            <select>
+
+                                <option>
+                                    Select
+                                </option>
+
+                                <option>
+                                    Normal
+                                </option>
+
+                                <option>
+                                    Observed
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Navigation -->
+
+                <div class="form-navigation">
+
+                    <button
+                        type="button"
+                        id="previousButton"
+                        class="secondary-button"
+                    >
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Previous
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="nextButton"
+                        class="primary-button"
+                    >
+
+                        Next
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ASSESSMENT
+        ================================================= -->
+
+        <section id="assessment" class="page">
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h1>
+                        Smart Assessment
+                    </h1>
+
+                    <p>
+                        Review structured patient assessment data.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="assessment-dashboard">
+
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h2>
+                                Dosha Overview
+                            </h2>
+
+                            <p>
+                                Assessment visualization
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-chart-simple"></i>
+
+                    </div>
+
+
+                    <div class="dosha-chart">
+
+
+                        <div class="dosha">
+
+                            <div class="dosha-circle vata">
+                                42%
+                            </div>
+
+                            <strong>
+                                Vata
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dosha">
+
+                            <div class="dosha-circle pitta">
+                                34%
+                            </div>
+
+                            <strong>
+                                Pitta
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dosha">
+
+                            <div class="dosha-circle kapha">
+                                24%
+                            </div>
+
+                            <strong>
+                                Kapha
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <h2>
+                        Case Status
+                    </h2>
+
+
+                    <div class="alert success">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <div>
+
+                            <strong>
+                                Case Successfully Completed
+                            </strong>
+
+                            <p>
+                                Ready for doctor review.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert warning">
+
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+
+                        <div>
+
+                            <strong>
+                                Doctor Verification Required
+                            </strong>
+
+                            <p>
+                                Automated results should be reviewed by a qualified practitioner.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             HISTORY
+        ================================================= -->
+
+        <section id="history" class="page">
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h1>
+                        Patient History
+                    </h1>
+
+                    <p>
+                        View previous consultations.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="table-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        placeholder="Enter Patient ID or name..."
+                    >
+
+                </div>
+
+
+                <div class="history-list">
+
+
+                    <div class="history-item">
+
+                        <div class="history-icon">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+
+                        <div class="history-info">
+
+                            <h3>
+                                Headache
+                            </h3>
+
+                            <p>
+                                P1024 • Arun Kumar
+                            </p>
+
+                        </div>
+
+                        <span>
+                            09 Sep 2026
+                        </span>
+
+                        <button class="icon-button">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="history-item">
+
+                        <div class="history-icon">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+
+                        <div class="history-info">
+
+                            <h3>
+                                Digestive Issues
+                            </h3>
+
+                            <p>
+                                P1024 • Arun Kumar
+                            </p>
+
+                        </div>
+
+                        <span>
+                            21 Aug 2026
+                        </span>
+
+                        <button class="icon-button">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="history-item">
+
+                        <div class="history-icon">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+
+                        <div class="history-info">
+
+                            <h3>
+                                Follow-up
+                            </h3>
+
+                            <p>
+                                P1024 • Arun Kumar
+                            </p>
+
+                        </div>
+
+                        <span>
+                            05 Aug 2026
+                        </span>
+
+                        <button class="icon-button">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             REPORTS
+        ================================================= -->
+
+        <section id="reports" class="page">
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h1>
+                        Reports
+                    </h1>
+
+                    <p>
+                        Generated patient case reports.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Report ID
+                                </th>
+
+                                <th>
+                                    Patient
+                                </th>
+
+                                <th>
+                                    Type
+                                </th>
+
+                                <th>
+                                    Date
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td class="patient-id">
+                                    R-1001
+                                </td>
+
+                                <td>
+                                    Arun Kumar
+                                </td>
+
+                                <td>
+                                    Case Sheet
+                                </td>
+
+                                <td>
+                                    09 Sep 2026
+                                </td>
+
+                                <td>
+
+                                    <button
+                                        class="icon-button"
+                                        title="View"
+                                    >
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                    </button>
+
+
+                                    <button
+                                        class="icon-button"
+                                        title="Download"
+                                        onclick="downloadReport()"
+                                    >
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="patient-id">
+                                    R-1002
+                                </td>
+
+                                <td>
+                                    Priya Sharma
+                                </td>
+
+                                <td>
+                                    Assessment
+                                </td>
+
+                                <td>
+                                    08 Sep 2026
+                                </td>
+
+                                <td>
+
+                                    <button class="icon-button">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                    </button>
+
+                                    <button
+                                        class="icon-button"
+                                        onclick="downloadReport()"
+                                    >
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</section>
+
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div id="toast" class="toast">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+        Success
+    </span>
+
+</div>
+
+
+<!-- JavaScript -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
